@@ -7,6 +7,8 @@ public class main {
 		newEmployee emp1 = new newEmployee("prateek", "mehta", "saleads");
 		System.out.println(emp1.getEmail());
 		System.out.println(emp1.getPassword());
+		emp1.setPassword("abcdefg");
+		System.out.println(emp1.getPassword());
 	}
 
 }

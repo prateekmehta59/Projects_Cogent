@@ -8,7 +8,7 @@ public class newEmployee {
 	private String lastName;
 //	private String email;
 	private String altEmail;
-	private Integer mailboxCapacity;
+	private static Integer mailboxCapacity = 1000;
 	private String password;
 	private static Integer passwordLen = 6;
 	private String department;
@@ -26,6 +26,11 @@ public class newEmployee {
 		} else {
 			this.department = "";
 		}
+		
+		StringBuilder sb = new StringBuilder( passwordLen );
+		   for( int i = 0; i < passwordLen; i++ ) 
+		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
+		   this.password = sb.toString();
 	}
 
 	public String newEmail() {
@@ -36,12 +41,12 @@ public class newEmployee {
 		}
 	}
 	
-	public String newPassword() {
-		StringBuilder sb = new StringBuilder( passwordLen );
-		   for( int i = 0; i < passwordLen; i++ ) 
-		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
-		   return sb.toString();
-	}
+//	public void newPassword() {
+//		StringBuilder sb = new StringBuilder( passwordLen );
+//		   for( int i = 0; i < passwordLen; i++ ) 
+//		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
+//		   this.password = sb.toString();
+//	}
 	
 	public String getEmail() {
 		return this.newEmail();
@@ -74,7 +79,7 @@ public class newEmployee {
 
 	
 	public String getPassword() {
-		return this.newPassword();
+		return password;
 	}
 
 	public void setPassword(String password) {
