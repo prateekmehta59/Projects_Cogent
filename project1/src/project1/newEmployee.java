@@ -29,7 +29,11 @@ public class newEmployee {
 	}
 
 	public String newEmail() {
-		return firstName+ "." + lastName + "@" + department + "." + company + ".com";
+		if (department.equals("")){
+			return firstName+ "." + lastName + "@" + company + ".com";
+		} else {
+			return firstName+ "." + lastName + "@" + department + "." + company + ".com";
+		}
 	}
 	
 	public String newPassword() {
